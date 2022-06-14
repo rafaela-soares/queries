@@ -6,7 +6,7 @@ import data.generic.terraform as tf_lib
 CxPolicy[result] {
     s3 := input.document[i].resource.aws_s3_bucket[bucketName]
 
-    not common_lib.valid_key(s3, "logging")  # version before TF AWS 4.0
+    not common_lib.valid_key(s3, "logging")  # version before TF AWS 4.0 
     not tf_lib.has_target_resource(bucketName, "aws_s3_bucket_logging") # version after TF AWS 4.0
 
     result := {
@@ -30,7 +30,7 @@ CxPolicy[result] {
     result := {
         "documentId": input.document[i].id,
         "resourceType": "n/a",
-		"resourceName": "n/a",
+        "resourceName": "n/a",
         "searchKey": sprintf("module[%s]", [name]),
         "issueType": "MissingAttribute",
         "keyExpectedValue": "'logging' to be defined and not null",
