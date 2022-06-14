@@ -12,7 +12,7 @@ terraform {
 }
 
 resource "aws_s3_bucket" "positive1" {
-  bucket = "my-tf-test-bucket"
+  bucket = "my-tf-test-buckett"
   acl    = "private"
 
   tags = {
