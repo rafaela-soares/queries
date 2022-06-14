@@ -15,8 +15,8 @@ CxPolicy[result] {
 		"resourceName": tf_lib.get_specific_resource_name(s3, "aws_s3_bucket", bucketName),
         "searchKey": sprintf("aws_s3_bucket[%s]", [bucketName]),
         "issueType": "MissingAttribute",
-        "keyExpectedValue": "'logging' to be defined and not null",
-        "keyActualValue": "'logging' is undefined or null",
+        "keyExpectedValue": "'logging' to be defined and not null.",
+        "keyActualValue": "'logging' is undefined or null.",
         "searchLine": common_lib.build_search_line(["resource", "aws_s3_bucket", bucketName], []),
     }
 }
