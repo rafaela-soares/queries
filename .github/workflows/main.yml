@@ -16,5 +16,5 @@ jobs:
           title: "update(main): sync master to main"
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "update(main): sync master to main"
-          branch: master
-          base: main
+          branch: main
+          base: master
