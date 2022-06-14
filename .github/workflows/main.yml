@@ -11,16 +11,23 @@ jobs:
     runs-on: ubuntu-latest
     name: Syncing branches
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Set up Node
         uses: actions/setup-node@v1
         with:
           node-version: 12
       - name: Opening pull request
         id: pull
-        uses: tretuna/sync-branches@1.2.0
+        uses: tretuna/sync-branches@1.4.0
         with:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           FROM_BRANCH: 'master'
-          TO_BRANCH: 'main'
+          TO_BRANCH: 'develop_1.6'
+          PULL_REQUEST_TITLE: 'update(develop_1.6): sync master to develop_1.6'
+          PULL_REQUEST_BODY: 'sync master to develop_1.6'
