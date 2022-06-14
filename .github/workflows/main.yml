@@ -19,3 +19,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "update(main): sync master to main"
           branch: main
+          base: master
