@@ -3,9 +3,6 @@ name: kics-github-action
 on:
   pull_request:
     branches:
-      - master
-  push:
-    branches:
       - main
 
 jobs:
