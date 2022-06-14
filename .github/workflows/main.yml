@@ -19,8 +19,10 @@ jobs:
           node-version: 12
       - name: Opening pull request
         id: pull
-        uses: tretuna/sync-branches@1.2.0
+        uses: tretuna/sync-branches@1.4.0
         with:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           FROM_BRANCH: 'master'
           TO_BRANCH: 'main'
+          PULL_REQUEST_TITLE: 'update(main): sync master to main'
+          PULL_REQUEST_BODY: 'sync master to main'
