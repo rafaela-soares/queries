@@ -4,8 +4,6 @@ name: kics-github-action
 on:
   pull_request:
     branches: [master,main]
-  push:
-    branches: [master]
   workflow_dispatch:
 
 jobs:
