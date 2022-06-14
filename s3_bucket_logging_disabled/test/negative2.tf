@@ -10,6 +10,6 @@ module "s3_bucket" {
   }
 
   logging {
-    target_bucket = "logssss"
+    target_bucket = "logsssss"
   }
 }
