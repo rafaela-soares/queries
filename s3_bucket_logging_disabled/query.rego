@@ -12,7 +12,7 @@ CxPolicy[result] {
     result := {
         "documentId": input.document[i].id,
         "resourceType": "aws_s3_bucket",
-		"resourceName":  tf_lib.get_specific_resource_name(s3, "aws_s3_bucket", bucketName),
+	"resourceName":  tf_lib.get_specific_resource_name(s3, "aws_s3_bucket", bucketName),
         "searchKey": sprintf("aws_s3_bucket[%s]", [bucketName]),
         "issueType": "MissingAttribute",
         "keyExpectedValue": "'logging' to be defined and not null..",
