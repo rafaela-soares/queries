@@ -16,7 +16,7 @@ CxPolicy[result] {
         "searchKey": sprintf("aws_s3_bucket[%s]", [bucketName]),
         "issueType": "MissingAttribute",
         "keyExpectedValue": "'logging' to be defined and not null.",
-        "keyActualValue": "'logging' is undefined or null.",
+        "keyActualValue": "'logging' is undefined or null..",
         "searchLine": common_lib.build_search_line(["resource", "aws_s3_bucket", bucketName], []),
     }
 }
