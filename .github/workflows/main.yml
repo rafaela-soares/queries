@@ -18,3 +18,12 @@ jobs:
           pr_title: "update(main): sync master to main"
           pr_body: ":crown: *An automated PR*"
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          title: "update(main): sync master to main"
+          token: ${{ secrets.KICS_BOT_PAT }}
+          commit-message: "update(main): sync master to main"
+          branch: master
+          base: main
