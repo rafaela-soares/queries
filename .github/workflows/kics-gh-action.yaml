@@ -1,8 +1,9 @@
+
 name: kics-github-action
 
 on:
   pull_request:
-    branches: [main]
+    branches: [master,main]
   workflow_dispatch:
 
 jobs:
