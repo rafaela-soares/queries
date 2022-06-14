@@ -5,13 +5,21 @@ on:
     branches: [master]
 
 jobs:
-  git-sync:
+  sync-release:
     runs-on: ubuntu-latest
+    name: Syncing branches
     steps:
-      - name: git-sync
-        uses: wei/git-sync@v3
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Node
+        uses: actions/setup-node@v1
         with:
-          source_repo: "rafaela-soares/queries"
+          node-version: 12
+      - name: Sync Pull Request
+        uses: repo-sync/pull-request@v2
+        with:
           source_branch: "master"
-          destination_repo: "rafaela-soares/queries"
-          destination_branch: "main"
+          destination_branch: "main"                
+          pr_title: "update(main): sync master to main"
+          pr_body: ":crown: *An automated PR*"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
