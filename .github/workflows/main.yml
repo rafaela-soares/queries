@@ -19,7 +19,7 @@ jobs:
         uses: repo-sync/pull-request@v2
         with:
           source_branch: "master"
-          destination_branch: "main"                 
-          pr_title: "update(main): sync master to main" 
+          destination_branch: "main"                
+          pr_title: "update(main): sync master to main"
           pr_body: ":crown: *An automated PR*"
           github_token: ${{ secrets.GITHUB_TOKEN }}
