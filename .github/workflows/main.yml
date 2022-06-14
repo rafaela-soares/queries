@@ -2,11 +2,10 @@ name: Sync Back to Develop
 
 on:
   push:
-    branches:
-      - master
+    branches: [master]
 
 jobs:
-  sync-branches:
+  sync-release:
     runs-on: ubuntu-latest
     name: Syncing branches
     steps:
@@ -16,12 +15,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12
-      - name: Opening pull request
-        id: pull
-        uses: tretuna/sync-branches@1.4.0
+      - name: Sync Pull Request
+        uses: repo-sync/pull-request@v2
         with:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          FROM_BRANCH: 'master'
-          TO_BRANCH: 'main'
-          PULL_REQUEST_TITLE: 'update(main): sync master to main'
-          PULL_REQUEST_BODY: 'sync master to main'
+          source_branch: "master"
+          destination_branch: "main"                 
+          pr_title: "update(main): sync master to main" 
+          pr_body: ":crown: *An automated PR*"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
