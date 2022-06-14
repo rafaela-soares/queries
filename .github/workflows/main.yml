@@ -1,6 +1,7 @@
 name: Sync Back to Develop
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
